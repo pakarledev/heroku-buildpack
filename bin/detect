@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# this pack is valid for apps with a hello.txt in the root
+if [ -f $1/hello.txt ]; then
+
+	echo "HelloFramework"
+  	
+	exit 0
+
+else
+
+	error <<-EOF
+		Application not supported by this buildpack!
+		
+		The 'heroku/php' buildpack is set on this application, but was
+		unable to detect a PHP codebase.
+		
+		A PHP app on Heroku requires a 'composer.json' at the root of
+		the directory structure, or an 'index.php' for legacy behavior.		
+	EOF
+
+	exit 1
+fi
+
