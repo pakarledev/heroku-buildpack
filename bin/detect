@@ -8,7 +8,7 @@ if [ -f $1/hello.txt ]; then
 	exit 0
 
 else
-
+	echo "=== $1 ==="
 	error <<-EOF
 		Application not supported by this buildpack!
 		
