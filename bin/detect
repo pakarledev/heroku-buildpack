@@ -8,16 +8,7 @@ if [ -f $1/hello.txt ]; then
 	exit 0
 
 else
-	echo "=== $1 ==="
-	error <<-EOF
-		Application not supported by this buildpack!
-		
-		The 'heroku/php' buildpack is set on this application, but was
-		unable to detect a PHP codebase.
-		
-		A PHP app on Heroku requires a 'composer.json' at the root of
-		the directory structure, or an 'index.php' for legacy behavior.		
-	EOF
+	echo "NOK : === $1 ==="
 
 	exit 1
 fi
